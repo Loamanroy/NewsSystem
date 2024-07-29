@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)9#iv13u#1czau$c)$@gg9&n03v&d%%cn43mlo_-n4+5z4--x(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -74,9 +75,12 @@ WSGI_APPLICATION = 'NewsSystem.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": 'newsSystem',
+        "USER": 'postgres',
+        "PASSWORD": "Ad117312!",
+        "HOST": "localhost",
     }
 }
 
