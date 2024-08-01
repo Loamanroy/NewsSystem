@@ -5,16 +5,20 @@
     <title>{{ title }}</title>
 </head>
 <body>
-    <h1>{{ title }}</h1>
-    <ul>
-        {% for p in posts %}
+<h1>{{ title }}</h1>
+<ul>
+    {% for p in posts %}
+        {% if p.is_published %}
             <li>
                 <h2>{{ p.title }}</h2>
                 <h3>{{ p.content }}</h3>
-                <hr>
+                {% if not forloop.last %}
+                    <hr>
+                {% endif %}
             </li>
-        {% endfor %}
+        {% endif %}
+    {% endfor %}
 
-    </ul>
+</ul>
 </body>
 </html>

@@ -5,7 +5,7 @@ menu = ["О сайте", "Добавить статью", "Обратная св
 
 data_db = [
     {'id': 1, 'title': 'Анджелина Джоли', 'content': 'Bio', 'is_published': True},
-    {'id': 2, 'title': 'Margo Robie', 'content': 'Bio', 'is_published': True},
+    {'id': 2, 'title': 'Margo Robie', 'content': 'Bio', 'is_published': False},
     {'id': 3, 'title': 'Julie Roberts', 'content': 'Bio', 'is_published': True},
 ]
 def index(request):
