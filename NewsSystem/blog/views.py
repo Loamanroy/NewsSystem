@@ -1,7 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-menu = ["О сайте", "Добавить статью", "Обратная связь", "Войти"]
+menu = [
+    {'title': 'О сайте', 'url_name': 'about'},
+    {'title': 'Добавить статью', 'url_name': 'add_page'},
+    {'title': 'Обратная связь', 'url_name': 'contact'},
+    {'title': 'Войти', 'url_name': 'login'},
+]
 
 data_db = [
     {'id': 1, 'title': 'Анджелина Джоли', 'content': 'Bio', 'is_published': True},
@@ -20,7 +25,11 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'blog/about.html', {'title': 'О сайте'})
+    data = {
+        'title': "О нас",
+        'menu': menu
+    }
+    return render(request, 'blog/about.html', context=data)
 
 
 def login(request):
@@ -31,7 +40,7 @@ def contact(request):
     return HttpResponse("Связаться с нами")
 
 
-def addpage(request):
+def add_page(request):
     return HttpResponse("Добавление статьи")
 
 
